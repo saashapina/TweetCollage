@@ -1,24 +1,25 @@
-const  Twit = require('twit');
-require('dotenv').config();
+const Twit = require("twit");
 
-const variables = require('./variables')
-const { TWITTER_AUTH } = variables;
-const T = new Twit(variables.TWITTER_AUTH);
+const T = new Twit({
+  consumer_key,
+  consumer_secret,
+  app_only_auth
+});
 
-const getTweets = (user) => {
+const getTweets = (user, cb) => {
   const tweetList = [];
-  T.get(`https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${user}&count=10`)
-  .then(resp => {
-    const tweets = resp.data;
+  T.get(
+    `https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=${user}&count=10`
+  )
+    .then(resp => {
+      const tweets = resp.data;
 
-    for (let tweet of tweets) {
-      tweetList.push(tweet.text)
-      console.log(tweet.text)
-    }
-
-    return tweetList;
-  })
-  .catch(err => console.log(err))
+      for (let tweet of tweets) {
+        tweetList.push(tweet.text);
+      }
+      return cb(tweetList);
+    })
+    .catch(err => console.log(err));
 };
 
-module.exports=getTweets;
+module.exports = getTweets;
