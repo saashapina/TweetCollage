@@ -1,5 +1,5 @@
 {
-  "name": "Tweetsee",
+  "name": "tweetsee",
   "version": "1.0.0",
   "description": "Tweet Visualiser",
   "main": "src/server/index.js",

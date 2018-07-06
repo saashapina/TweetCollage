@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
-
-const collage = new Schema({
-  id: {
+const Collage = new mongoose.Schema({
+  key: {
     type: Date.now(),
     unique: true
   },
@@ -14,4 +12,4 @@ const collage = new Schema({
   images: [String]
 })
 
-const collage = mongoose.model('Collage', collage);
+model.exports = mongoose.model('Collage', Collage);
