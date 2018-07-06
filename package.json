@@ -23,11 +23,13 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
+    "mongoose": "^5.2.0",
     "morgan": "^1.9.0",
     "os": "^0.1.1",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "watson-developer-cloud": "^3.5.3"
   },
   "devDependencies": {
